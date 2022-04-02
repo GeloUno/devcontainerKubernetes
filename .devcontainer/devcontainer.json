@@ -1,7 +1,7 @@
 {
     "name": "second-app",
     "build":{
-        "dockerfile": "Docerfile",
+        "dockerfile": "Dockerfile",
         "args": {
             "NODE_VERSION":"14"
         }
