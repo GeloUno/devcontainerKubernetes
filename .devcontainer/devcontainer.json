@@ -1,0 +1,16 @@
+{
+    "name": "second-app",
+    "build":{
+        "dockerfile": "Docerfile",
+        "args": {
+            "NODE_VERSION":"14"
+        }
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "extensions": [
+        "ms-vscode-remote.remote-containers",
+        "dbaeumer.vscode-eslint",
+    ]
+}

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: second-app-deployment
+spec: 
+  replicas: 9
+  selector:
+    matchLabels:
+      app: second-app
+      kind: backend
+  template: 
+    metadata:
+      labels:
+        app: second-app
+        kind: backend
+    spec:
+      containers:
+        - name: second-node
+          image: gelo59/kub-first-app:1.1.3
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            initialDelaySeconds: 5
+          
